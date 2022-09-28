@@ -1,0 +1,11 @@
+table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.white-box{
+    padding: 30px;
+}
+.black-box{
+    padding: 30px;
+    background-color: black;
+}
