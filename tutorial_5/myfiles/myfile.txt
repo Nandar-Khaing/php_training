@@ -1,0 +1,4 @@
+Be sure to save the result in a local object. You can use 
+all elements that are available for the footer. See “Footer” section for detail.
+Additionally, only inside of the header reference you can add
+ watermarks or background pictures. See “Watermarks” section.
