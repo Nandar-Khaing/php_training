@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['user'])){
+if (!isset($_SESSION['user'])) {
     header('location: index.php');
     exit();
 }
@@ -15,18 +15,18 @@ if(!isset($_SESSION['user'])){
     <link rel="stylesheet" href="../bstrap/bootstrap.min.css">
 </head>
 <body class="text-center">
-    <div class="container mt-5">
-        <h3 class="mb-3">Mg Mg</h3>
-        <ul class="list-group w-50 m-auto">
-            <li class="list-group-item">
-                <b>Email:</b> mgmg@gmail.com
-            </li>
-            <li class="list-group-item">
-                <b>Phone:</b> 09-454433335
-            </li>
-        </ul>
-    </div>
-        
+  <div class="container mt-5">
+    <h3 class="mb-3">Mg Mg</h3>
+    <ul class="list-group w-50 m-auto">
+     <li class="list-group-item">
+        <b>Email:</b> mgmg@gmail.com
+      </li>
+      <li class="list-group-item">
+        <b>Phone:</b> 09-454433335
+      </li>
+      </ul>
+  </div>
+
     <a href="logout.php">Log out</a>
-   
+
 </html>

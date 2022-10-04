@@ -87,6 +87,7 @@ $spreadsheet = $reader->load("myfiles/myfile.xlsx");
 $worksheet = $spreadsheet->getActiveSheet();
 // Get the highest row and column numbers referenced in the worksheet
 $highestRow = $worksheet->getHighestRow();
+echo $highestRow;
 $highestColumn = $worksheet->getHighestColumn();
 $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn); // e.g. 5
 

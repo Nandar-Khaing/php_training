@@ -3,7 +3,6 @@ $dirName = $_POST['folder-name'];
 $fileName = $_FILES['image']['name'];
 $tmpFile = $_FILES['image']['tmp_name'];
 $fileType = $_FILES['image']['type'];
-$fileExt = end(explode('.', $fileName));
 if (is_uploaded_file($tmpFile)) {
     if (checkMimeType($tmpFile)) {
         mkdir($dirName);
