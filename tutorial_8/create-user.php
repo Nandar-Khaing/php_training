@@ -19,19 +19,19 @@ if (isset($_POST['create-btn'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $address = $_POST['address'];
+    $country = $_POST['country'];
 
     $message = '';
     // insert a single publisher
 
-    $sql = 'INSERT INTO users(name,email,phone,address)
-   VALUES(:name,:email,:phone,:address)';
+    $sql = 'INSERT INTO users(name,email,phone,country)
+   VALUES(:name,:email,:phone,:country)';
     $statement = $connection->prepare($sql);
     if ($statement->execute(
         [':name' => $name,
             ':email' => $email,
             ':phone' => $phone,
-            ':address' => $address]
+            ':country' => $country]
     )) {
         $message = 'data inserted successfully';
 
@@ -89,8 +89,8 @@ if (isset($_POST['create-btn'])) {
                 <input type="text" class="form-control" name="phone" placeholder="Enter Phone">
               </div>
               <div class="mb-3">
-                <label for="address">Address</label>
-                <textarea  class="form-control" name="address" placeholder="Enter Address"></textarea>
+                <label for="country">Country</label>
+                <textarea  class="form-control" name="country" placeholder="Enter Country"></textarea>
               </div>
             </div>
             <div class="card-footer">

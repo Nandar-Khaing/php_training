@@ -10,6 +10,11 @@
    body{
     padding: 50px;
    }
+   .wrap{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+   }
   </style>
 </head>
 <body>
@@ -60,7 +65,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>Address</th>
+                <th>Country</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -71,20 +76,28 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
                 <td><?=$user->name?></td>
                 <td><?=$user->email?></td>
                 <td><?=$user->phone?></td>
-                <td><?=$user->address?></td>
+                <td class="country"><?=$user->country?></td>
                 <td>
                   <a href="edit-user.php?id=<?=$user->id;?>" class="btn btn-primary me-1">Edit</a>||
                   <a href="delete-user.php?id=<?=$user->id;?>" class="btn btn-success ms-1">Delete</a>
                 </td>
               </tr>
-              <?php endforeach;?>
+              <?php endforeach?>
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
+  <div class="row wrap mt-3">
+    <h3 class="text-primary m-3">Bar Graph</h3>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+  </div>
 </div>
 <script src="bstrap/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
+

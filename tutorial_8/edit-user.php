@@ -27,12 +27,12 @@ if (isset($_POST['update-btn'])) {
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $address = $_POST['address'];
+        $country = $_POST['country'];
 
         $message = '';
         // insert a single publisher
 
-        $sql = 'UPDATE users SET name=:name,email=:email,phone=:phone,address=:address
+        $sql = 'UPDATE users SET name=:name,email=:email,phone=:phone,country=:country
    WHERE id=:id';
 
         $statement = $connection->prepare($sql);
@@ -40,7 +40,7 @@ if (isset($_POST['update-btn'])) {
             [':name' => $name,
                 ':email' => $email,
                 ':phone' => $phone,
-                ':address' => $address,
+                ':country' => $country,
                 ':id' => $id]
         )) {
             header("Location: index.php");
@@ -102,8 +102,8 @@ if (isset($_POST['update-btn'])) {
               <input type="text" class="form-control" name="phone" value="<?=$user->phone;?>">
             </div>
             <div class="mb-3">
-              <label for="address">Address</label>
-              <textarea  class="form-control" name="address"><?=$user->address;?></textarea>
+              <label for="country">Country</label>
+              <textarea  class="form-control" name="country"><?=$user->country;?></textarea>
             </div>
           </div>
           <div class="card-footer">
