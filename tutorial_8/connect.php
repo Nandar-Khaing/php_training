@@ -4,9 +4,9 @@ $dsn = 'mysql:host=localhost;dbname=tutorial_8';
 $username = 'root';
 $password = 'root';
 $option = [];
-try{
-  $connection = new PDO($dsn,$username,$password,$option);
+try {
+    $connection = new PDO($dsn, $username, $password, $option);
 
-}catch(PDOException $e){
-
+} catch (PDOException $e) {
+    echo "Connection Fail";
 }

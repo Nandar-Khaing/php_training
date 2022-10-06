@@ -15,47 +15,45 @@
 <body>
 
   <?php
-  require 'connect.php';
-  $sql = 'SELECT * FROM users';
-  $statement = $connection->prepare($sql);
-  $statement->execute();
-  $users = $statement->fetchAll(PDO::FETCH_OBJ);
-  ?>
-  <div class="container">
+require 'connect.php';
+$sql = 'SELECT * FROM users';
+$statement = $connection->prepare($sql);
+$statement->execute();
+$users = $statement->fetchAll(PDO::FETCH_OBJ);
+?>
+<div class="container">
   <nav class="navbar navbar-expand-lg bg-light mb-3">
-  <div class="container-fluid">
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="create-user.php">CREATE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="edit-user.php">UPDATE</a>
-        </li>
-  </ul>
-  </div>
-  </div>
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="create-user.php">CREATE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="edit-user.php">UPDATE</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
-    <div class="row">
-      <div class="col-md-12">
-        
-        <div class="card">
-          <div class="card-header">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
           <div class="row">
-              <div class="col-md-6">
+            <div class="col-md-6">
               <div class="card-title text-primary">Users List</div>
-              </div>
-              <div class="col-md-6">
-                <a href="create-user.php" class="float-end btn btn-primary">+ Create User</a>
-              </div>
-            
+            </div>
+            <div class="col-md-6">
+              <a href="create-user.php" class="float-end btn btn-primary">+ Create User</a>
+            </div>
           </div>
-          <div class="card-body">
-            <table class="table border">
+        </div>
+        <div class="card-body">
+          <table class="table border">
             <thead>
               <tr>
                 <th>ID</th>
@@ -67,26 +65,26 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach($users as $user): ?>
+              <?php foreach ($users as $user): ?>
               <tr>
-                <td><?= $user->id ?></td>
-                <td><?= $user->name ?></td>
-                <td><?= $user->email ?></td>
-                <td><?= $user->phone ?></td>
-                <td><?= $user->address ?></td>
+                <td><?=$user->id?></td>
+                <td><?=$user->name?></td>
+                <td><?=$user->email?></td>
+                <td><?=$user->phone?></td>
+                <td><?=$user->address?></td>
                 <td>
-                <a href="edit-user.php?id=<?= $user->id; ?>" class="btn btn-primary me-1">Edit</a>||
-                <a href="delete-user.php?id=<?= $user->id; ?>" class="btn btn-success ms-1">Delete</a>
+                  <a href="edit-user.php?id=<?=$user->id;?>" class="btn btn-primary me-1">Edit</a>||
+                  <a href="delete-user.php?id=<?=$user->id;?>" class="btn btn-success ms-1">Delete</a>
                 </td>
               </tr>
-              <?php endforeach; ?>
+              <?php endforeach;?>
             </tbody>
-            </table>
-          </div>
+          </table>
         </div>
       </div>
     </div>
   </div>
-  <script src="bstrap/bootstrap.min.js"></script>
+</div>
+<script src="bstrap/bootstrap.min.js"></script>
 </body>
 </html>
