@@ -20,18 +20,20 @@ if (isset($_POST['create-btn'])) {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $country = $_POST['country'];
+    $password = $_POST['password'];
 
     $message = '';
     // insert a single publisher
 
-    $sql = 'INSERT INTO users(name,email,phone,country)
-   VALUES(:name,:email,:phone,:country)';
+    $sql = 'INSERT INTO users(name,email,phone,country,password)
+   VALUES(:name,:email,:phone,:country,:password)';
     $statement = $connection->prepare($sql);
     if ($statement->execute(
         [':name' => $name,
             ':email' => $email,
             ':phone' => $phone,
-            ':country' => $country]
+            ':country' => $country,
+            ':password' => $password]
     )) {
         $message = 'data inserted successfully';
 
@@ -79,6 +81,10 @@ if (isset($_POST['create-btn'])) {
               <div class="mb-3">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" placeholder="Enter Name">
+              </div>
+              <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Email">
               </div>
               <div class="mb-3">
                 <label for="email">Email</label>

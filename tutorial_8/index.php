@@ -64,6 +64,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Password</th>
                 <th>Phone</th>
                 <th>Country</th>
                 <th>Action</th>
@@ -75,6 +76,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
                 <td><?=$user->id?></td>
                 <td><?=$user->name?></td>
                 <td><?=$user->email?></td>
+                <td><?=$user->password?></td>
                 <td><?=$user->phone?></td>
                 <td class="country"><?=$user->country?></td>
                 <td>

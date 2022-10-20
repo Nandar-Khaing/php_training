@@ -12,7 +12,8 @@ class Major extends Model
         'id',
         'name',
     ];
-    public function students(){
-        return $this->hasMany(Student::class,'major_id','id');
+    public function students()
+    {
+        return $this->hasMany(Student::class, 'major_id', 'id');
     }
 }
